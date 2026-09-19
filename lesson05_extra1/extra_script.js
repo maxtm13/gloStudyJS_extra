@@ -1,11 +1,17 @@
-const num = 266219;
-let p = 1;
-strNum = num.toString();
-for (let index = 0; index < strNum.length; index++) {
-	// console.log(strNum[index]);
-	p *= strNum[index];
+'use strict'
+let number;
+
+const isNumber = function (params) {
+	return !isNaN(parseFloat(params)) && isFinite(params)
+};
+const getNumber = function (pseudonum) {
+	if (!isNumber(pseudonum) ) {
+		return 0
+	}
+	let result = pseudonum.match(/\d+(\.\d+)?/)
+	return parseFloat(result[0])
 }
-console.log('Произведение цифр p: ', p);
-let pPow3 = p ** 3;
-console.log("Произведение цифр в степени 3: ", pPow3);
-console.log('Первые 2 цифры: ', pPow3.toString().slice(0, 2));
+
+number = prompt('Значение');
+number = getNumber(number)
+console.log('Полученное значение: ', number, ', тип значения: ', typeof number);
