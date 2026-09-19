@@ -3,12 +3,12 @@
 let arr=[];
 let element;
 
-const getFirstNum = function (element) {
-	if (element > 1) {
-		element = element / 10
-		return getFirstNum(element)
+const getFirstNum = function (el) {
+	if (el > 1) {
+		el = el / 10
+		return getFirstNum(el)
 	} else {
-		return Math.trunc(element * 10);
+		return Math.trunc(el * 10);
 	}
 }
 
